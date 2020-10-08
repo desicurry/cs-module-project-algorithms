@@ -4,8 +4,12 @@ Returns: a List of integers
 '''
 def moving_zeroes(arr):
     # Your code here
+    originalArrCount = len(arr)
+    arr[:] = filter(None, arr) #remove zeroes
+    newArrCount = len(arr)
+    arr.extend([0] * (originalArrCount - newArrCount)) #add zeroes based on the count descrepency
 
-    pass
+    return arr
 
 
 if __name__ == '__main__':
